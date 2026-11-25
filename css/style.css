@@ -596,3 +596,21 @@ figure { margin: 0; }
 
 /* Cards placed side by side must not get the stacking margin */
 .two-col > .card { margin-top: 0; }
+
+
+/* ---------- Formal refinements ---------- */
+.page-title {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--blue);
+  display: inline-block;
+}
+
+.section > h2 {
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--blue);
+}
+
+caption {
+  font-size: 0.9rem;
+  font-style: italic;
+}
