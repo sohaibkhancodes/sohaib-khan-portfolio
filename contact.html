@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Sohaib Khan</title>
+  <meta name="description" content="Contact Sohaib Khan, BSCS student at Iqra University Islamabad. Email, phone, map location and a message form.">
+  <meta name="author" content="Sohaib Khan">
+  <!-- Favicon (files live in the assets folder) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <!-- The ONE external stylesheet used by every page -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ===== Site header: sticky, with Flexbox navigation ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Sohaib<span> Khan</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="media.html">Favourite Media</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <h1 class="page-title">Contact</h1>
+      <p class="lead">Feel free to get in touch about internships, projects or collaboration.</p>
+
+      <div class="contact-grid">
+
+        <!-- LEFT: details + map -->
+        <div>
+          <section class="card" aria-labelledby="details-title">
+            <h2 id="details-title">Contact Details</h2>
+            <ul class="meta-list">
+              <li><strong>Name:</strong> Sohaib Khan</li>
+              <li><strong>Designation:</strong> BSCS Student &amp; Aspiring Full Stack Developer</li>
+              <li><strong>University:</strong> Iqra University Islamabad</li>
+              <li><strong>Email:</strong> <a href="mailto:sohaibkhan4767@gmail.com">sohaibkhan4767@gmail.com</a></li>
+              <li><strong>Phone:</strong> <a href="tel:+923147796790">03147796790</a></li>
+            </ul>
+          </section>
+
+          <section class="card" aria-labelledby="friend-title">
+            <h2 id="friend-title">Friend&rsquo;s Details</h2>
+            <ul class="meta-list">
+              <li><strong>Name:</strong> Ibtisam Faisal</li>
+              <li><strong>Student ID:</strong> 41292</li>
+            </ul>
+          </section>
+
+          <section class="section map-section" aria-labelledby="map-title">
+            <h2 id="map-title">Find Me at Iqra University Islamabad</h2>
+            <!-- Embedded Google Map -->
+            <div class="map-frame">
+              <iframe src="https://www.google.com/maps?q=Iqra+University+Islamabad+Campus+H-9&amp;output=embed" title="Google Map showing Iqra University Islamabad campus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT: contact form (opens the visitor's email app; no JavaScript used) -->
+        <section class="card" aria-labelledby="form-title">
+          <h2 id="form-title">Send a Message</h2>
+          <form action="mailto:sohaibkhan4767@gmail.com" method="post" enctype="text/plain">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Site footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 Sohaib Khan &middot; BSCS, Iqra University Islamabad</p>
+      <p>CSC 337 Web Programming Languages &middot; Assignment 1 &middot; <a href="mailto:sohaibkhan4767@gmail.com">sohaibkhan4767@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,596 @@
+/* ==========================================================
+   Sohaib Khan - Portfolio  |  CSC 337 Assignment 1
+   One external stylesheet shared by all four pages.
+   Sections:
+   1. Variables & reset      5. Cards, lists, chips
+   2. Header & navigation    6. Tables
+   3. Layout helpers         7. Favourite Media (CSS Grid)
+   4. Hero (Home)            8. Contact page & form
+                             9. Footer
+                            10. Responsive media queries
+   ========================================================== */
+
+/* ---------- 1. Variables & reset ---------- */
+:root {
+  --navy: #0b1f3a;
+  --navy-2: #14305a;
+  --blue: #2f6fb5;
+  --light-blue: #e8f1fb;
+  --sky: #cfe3f8;
+  --white: #ffffff;
+  --text: #1b2a3d;
+  --muted: #55657a;
+  --border: #c9d9ec;
+  --radius: 10px;
+  --shadow: 0 2px 10px rgba(11, 31, 58, 0.08);
+  --space: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--light-blue);
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+a {
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--navy);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--navy);
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+}
+
+h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+h2 { font-size: clamp(1.25rem, 3vw, 1.6rem); }
+h3 { font-size: 1.08rem; }
+
+p { margin: 0 0 1rem; }
+
+/* ---------- 2. Header & navigation (sticky + Flexbox) ---------- */
+.site-header {
+  position: sticky;            /* stays at the top while scrolling */
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  border-bottom: 3px solid var(--blue);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.7rem 1.25rem;
+  display: flex;               /* Flexbox: logo left, links right */
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.brand {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+.brand span { color: #8fc1f2; }
+.brand:hover { color: var(--white); }
+
+.nav-list {
+  display: flex;               /* Flexbox navigation */
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  display: block;
+  padding: 0.45rem 0.9rem;
+  color: #d6e6f8;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.nav-list a:hover {
+  background: var(--navy-2);
+  color: var(--white);
+}
+
+.nav-list a[aria-current="page"] {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ---------- 3. Layout helpers ---------- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+main { padding: 2rem 0 3rem; }
+
+.section { margin-bottom: 2.25rem; }
+
+.page-title {
+  margin-bottom: 0.4rem;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 65ch;
+  margin-bottom: 1.75rem;
+}
+
+.two-col {
+  display: flex;
+  gap: var(--space);
+  flex-wrap: wrap;
+}
+
+.two-col > * {
+  flex: 1 1 320px;
+}
+
+/* ---------- 4. Hero (Home) ---------- */
+.hero {
+  background: var(--navy);
+  color: #dbe9f8;
+  padding: 2.5rem 0;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap-reverse;
+}
+
+.hero-text { flex: 1 1 340px; }
+
+.hero h1 { color: var(--white); margin-bottom: 0.3rem; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.78rem;
+  color: #8fc1f2;
+  margin-bottom: 0.5rem;
+}
+
+.hero .role {
+  font-size: 1.1rem;
+  color: #b9d6f3;
+  margin-bottom: 1rem;
+}
+
+.hero-photo {
+  flex: 0 1 260px;
+  margin: 0 auto;
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  border: 4px solid var(--blue);
+  background: var(--sky);
+}
+
+/* Social icon buttons (inline SVG, no external icon library) */
+.social {
+  display: flex;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.1rem 0 0;
+  flex-wrap: wrap;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem 0.45rem 0.7rem;
+  border: 1px solid #3d6aa0;
+  border-radius: 999px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.social a:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.social svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* Light version of the social buttons for use on white cards */
+.social.on-light a {
+  color: var(--navy);
+  border-color: var(--border);
+}
+
+.social.on-light a:hover {
+  color: var(--white);
+}
+
+/* ---------- 5. Cards, lists, chips ---------- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.4rem 1.5rem;
+}
+
+.card + .card { margin-top: var(--space); }
+
+.card > :last-child { margin-bottom: 0; }
+
+.meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.meta-list li {
+  padding: 0.25rem 0;
+}
+
+.meta-list strong { color: var(--navy); }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chips li {
+  background: var(--light-blue);
+  border: 1px solid var(--border);
+  color: var(--navy);
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.9rem;
+}
+
+.experience-head {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.experience-head p { margin: 0; color: var(--muted); }
+
+.tag {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 6px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+.styled-list {
+  padding-left: 1.3rem;
+  margin: 0 0 1rem;
+}
+
+.styled-list li { padding: 0.15rem 0; }
+.styled-list li::marker { color: var(--blue); font-weight: 600; }
+
+.note {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ---------- 6. Tables (borders, background, hover) ---------- */
+.table-wrap {
+  overflow-x: auto;            /* a wide table scrolls inside its box, never the page */
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 0.8rem 1rem 0.2rem;
+}
+
+th,
+td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy-2);
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) { background: #f3f8fe; }
+
+tbody tr {
+  transition: background 0.15s;
+}
+
+/* Hover effect required by the assignment */
+tbody tr:hover {
+  background: var(--sky);
+}
+
+/* ---------- 7. Favourite Media: CSS Grid two-column layout ---------- */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;   /* left: posts, right: videos */
+  gap: var(--space);
+  align-items: start;
+}
+
+.media-grid > section { min-width: 0; }
+
+.post {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: var(--space);
+}
+
+.post img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--sky);
+}
+
+.post img.logo-img {
+  object-fit: contain;
+  padding: 1.5rem;
+  background: var(--white);
+  aspect-ratio: 16 / 9;
+}
+
+.post-body { padding: 1rem 1.2rem 1.2rem; }
+.post-body p { margin-bottom: 0.5rem; }
+.post-body > :last-child { margin-bottom: 0; }
+
+.video-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: var(--space);
+}
+
+/* Responsive 16:9 wrapper for YouTube iframes */
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--navy);
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-info { padding: 0.9rem 1.2rem 1.1rem; }
+.video-info h3 { margin-bottom: 0.3rem; }
+.video-info p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- 8. Contact page & form ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space);
+  align-items: start;
+}
+
+.contact-grid > * { min-width: 0; }
+
+.map-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--sky);
+}
+
+.map-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+form .field { margin-bottom: 1rem; }
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font: inherit;
+  color: var(--text);
+  background: #f7fafe;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(47, 111, 181, 0.2);
+  background: var(--white);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  border: 0;
+  border-radius: 8px;
+  padding: 0.7rem 1.6rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover { background: var(--blue); }
+
+/* ---------- 9. Footer ---------- */
+.site-footer {
+  background: var(--navy);
+  color: #b9d6f3;
+  font-size: 0.9rem;
+  border-top: 3px solid var(--blue);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.2rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.footer-inner p { margin: 0; }
+.site-footer a { color: #d6e6f8; }
+.site-footer a:hover { color: var(--white); }
+
+/* ---------- 10. Responsive media queries ---------- */
+/* Tablet and below: stack the two-column grids */
+@media (max-width: 900px) {
+  .media-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Phones (375px and up to 600px) */
+@media (max-width: 600px) {
+  main { padding: 1.5rem 0 2rem; }
+
+  .header-inner { padding: 0.6rem 1rem; }
+
+  .nav-list { width: 100%; }
+  .nav-list li { flex: 1 1 calc(50% - 0.25rem); }
+  .nav-list a { text-align: center; padding: 0.5rem 0.4rem; }
+
+  .container,
+  .hero-inner { padding-left: 1rem; padding-right: 1rem; }
+
+  .hero { padding: 1.75rem 0; }
+  .hero-inner { gap: 1.5rem; }
+  .hero-photo { flex-basis: 190px; }
+
+  .card { padding: 1.1rem 1.1rem; }
+
+  th,
+  td { padding: 0.55rem 0.65rem; font-size: 0.9rem; }
+
+  .footer-inner { flex-direction: column; }
+}
+
+/* ---------- Small additions ---------- */
+figure { margin: 0; }
+.map-section { margin-top: 1.5rem; }
+
+/* Cards placed side by side must not get the stacking margin */
+.two-col > .card { margin-top: 0; }

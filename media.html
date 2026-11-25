@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Favourite Media | Sohaib Khan</title>
+  <meta name="description" content="Favourite media of Sohaib Khan: social media profiles and five YouTube videos about web development and communication skills.">
+  <meta name="author" content="Sohaib Khan">
+  <!-- Favicon (files live in the assets folder) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <!-- The ONE external stylesheet used by every page -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ===== Site header: sticky, with Flexbox navigation ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Sohaib<span> Khan</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="media.html" aria-current="page">Favourite Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <h1 class="page-title">Favourite Media</h1>
+      <p class="lead">My social media profiles on the left and five YouTube videos that help me learn web development and communication on the right.</p>
+
+      <!-- ===== CSS Grid: two columns (left = social, right = videos) ===== -->
+      <div class="media-grid">
+
+        <!-- LEFT COLUMN: social media posts / images -->
+        <section aria-labelledby="social-title">
+          <h2 id="social-title">Social Media</h2>
+
+          <!-- Local image (stored in the assets folder) -->
+          <article class="post">
+            <img src="assets/sohaib-photo.jpg" width="640" height="655" alt="Sohaib Khan, profile photo used on social media">
+            <div class="post-body">
+              <h3>Instagram</h3>
+              <p>My profile photo and updates are shared on Instagram.</p>
+              <a href="https://www.instagram.com/_sohaibify/" target="_blank" rel="noopener noreferrer">Visit @_sohaibify</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <div class="post-body">
+              <h3>GitHub</h3>
+              <p>My code and projects are published on GitHub.</p>
+              <a href="https://github.com/sohaibkhancodes" target="_blank" rel="noopener noreferrer">Visit github.com/sohaibkhancodes</a>
+            </div>
+          </article>
+
+          <article class="post">
+            <div class="post-body">
+              <h3>LinkedIn</h3>
+              <p>My professional profile, education and internship details.</p>
+              <a href="https://www.linkedin.com/in/sohaib-khan-078b94433/" target="_blank" rel="noopener noreferrer">Visit my LinkedIn profile</a>
+            </div>
+          </article>
+
+          <!-- Online image (loaded from the W3C website) -->
+          <figure class="post">
+            <img class="logo-img" src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" width="512" height="512" loading="lazy" alt="HTML5 logo">
+            <figcaption class="post-body">
+              <h3>Learning the web</h3>
+              <p>HTML5 is the foundation of every page I build.</p>
+              <p class="note">Image: HTML5 Logo by <a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">W3C</a>, licensed under CC BY 3.0.</p>
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- RIGHT COLUMN: five embedded YouTube videos -->
+        <section aria-labelledby="videos-title">
+          <h2 id="videos-title">YouTube Videos</h2>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/07EVpWb8dtg" title="HTML &amp; CSS for Absolute Beginners" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>HTML &amp; CSS for Absolute Beginners</h3>
+            <p>A beginner-friendly introduction to building web pages with HTML and styling them with CSS.</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/MXKkXXYUxBc" title="Public Speaking for Beginners: Speak with Confidence" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Public Speaking for Beginners: Speak with Confidence</h3>
+            <p>Practical tips for new speakers who want to feel calmer and more confident in front of an audience.</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/R1vskiVDwl4" title="10 Ways to Have a Better Conversation (TED)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>10 Ways to Have a Better Conversation (TED)</h3>
+            <p>A TED talk on how to listen better and hold more meaningful conversations.</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/Q2cfh8X9v8s" title="How to Talk to Anyone About Anything" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>How to Talk to Anyone About Anything</h3>
+            <p>Ideas for starting conversations and keeping them going with all kinds of people.</p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/K0pxo-dS9Hc" title="Communication and Public Speaking Techniques" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Communication and Public Speaking Techniques</h3>
+            <p>An overview of techniques that help with clear communication and effective presentations.</p>
+          </div>
+        </article>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Site footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 Sohaib Khan &middot; BSCS, Iqra University Islamabad</p>
+      <p>CSC 337 Web Programming Languages &middot; Assignment 1 &middot; <a href="mailto:sohaibkhan4767@gmail.com">sohaibkhan4767@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
